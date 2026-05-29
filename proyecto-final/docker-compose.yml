@@ -1,0 +1,20 @@
+services:
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.frontend
+
+    ports:
+      - "80:80"
+
+    volumes:
+      - ./frontend/index.html:/var/www/html/index.html
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.backend
+
+    ports:
+      - "5000:5000"

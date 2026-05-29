@@ -1,0 +1,23 @@
+# ══════════════════════════════════════════════════════════════════════════════
+# BACKEND — Servidor HTTP Python
+# ══════════════════════════════════════════════════════════════════════════════
+# Guardar como: backend/Dockerfile.backend
+
+FROM ubuntu:24.04
+
+# Actualizar repos e instalar Python 3
+RUN apt-get update && \
+    apt-get install -y python3 && \
+    rm -rf /var/lib/apt/lists/*
+
+# Crear directorio de trabajo
+WORKDIR /app
+
+# Copiar script Python
+COPY server.py .
+
+# Exponer puerto 5000
+EXPOSE 5000
+
+# Comando para ejecutar el servidor
+CMD ["python3", "server.py"]
