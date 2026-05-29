@@ -1,1 +1,129 @@
-# proyecto-final
+# Proyecto Final — Arquitecto Cloud
+**Sistemas Operativos 750001C | Semestre 1 – 2026**
+**Universidad del Valle**
+
+---
+
+## Equipo
+
+|     Nombre     |   Código  |             Rol           |
+|----------------|-----------|---------------------------|
+| Jhostin Mapura | 202560787 | Virtualización            |
+| Miguel Riascos | 202560706 | Docker                    |
+| Mateo Carbajal | 202560786 | Kubernetes                |
+| Juan Castillo  | 202560755 | Sitio Web + Documentación |
+
+**Grupo asignado:** Grupo 4  
+**Distribución gráfica:** [Kubuntu 24.04.4 desktop]  
+**Distribución consola:** [Ubuntu 24.04.4 live server]  
+**Imagen Docker base:** [lubuntu 24.04.4 desktop]
+
+---
+
+## Componente 1: Virtualización con Linux
+
+**Distribuciones instaladas:** VM Gráfica + VM Consola  
+**Herramienta:** VirtualBox / VMware
+
+### Evidencias
+- Captura instalación VM gráfica
+- Captura particionamiento (lsblk)
+- Captura configuración de red
+- Captura prueba SSH funcional
+
+### Comandos principales
+```bash
+ip a                          # Ver interfaces de red
+lsblk                         # Ver particiones
+ssh usuario@ip_vm_consola     # Conectar por SSH
+```
+
+---
+
+## Componente 2: Contenedores Docker
+
+**Servicios implementados:**
+- Frontend: Nginx sirviendo HTML estático (puerto 80)
+- Backend: Python HTTP (puerto 5000)
+
+### Estructura de archivos
+```
+docker/
+├── frontend/
+│   ├── Dockerfile.frontend
+│   └── index.html
+├── backend/
+│   ├── Dockerfile.backend
+│   └── server.py
+└── docker-compose.yml
+```
+
+### Evidencias
+- Captura `docker compose up -d`
+- Captura navegador accediendo al frontend
+- Captura `curl http://localhost:5000`
+
+### Comandos principales
+```bash
+docker compose up -d
+docker ps
+docker images
+curl http://localhost
+curl http://localhost:5000
+```
+---
+
+## Componente 3: Orquestación con Kubernetes
+
+**Herramienta:** Minikube
+
+### Manifiestos
+- `deployment.yaml` — Nginx con 2 réplicas
+- `service.yaml` — NodePort en puerto 30080
+
+### Evidencias
+- Captura `kubectl get pods`
+- Captura `kubectl get svc`
+- Captura acceso desde navegador
+- Captura escalado a 3 réplicas
+
+### Comandos principales
+```bash
+minikube start
+kubectl apply -f deployment.yaml
+kubectl apply -f service.yaml
+kubectl get pods
+kubectl scale deployment nginx --replicas=3
+minikube service nginx --url
+```
+
+---
+
+## Componente 4: Sitio Web de Documentación
+
+**URL del sitio:** [https://...]  
+**Video YouTube:** [https://youtu.be/...]
+
+### Secciones del sitio
+- Home: introducción y objetivos
+- Equipo: integrantes con fotos y roles
+- Componentes: descripción, capturas y comandos de cada uno
+- Conclusiones: aprendizajes, dificultades y recomendaciones
+
+---
+
+## Diagrama de Arquitectura
+
+> Insertar imagen del diagrama (draw.io / Miro / Lucidchart)
+
+---
+
+## Conclusiones
+
+1. [Aprendizaje principal]
+2. [Dificultad encontrada y cómo se resolvió]
+3. [Recomendación para futuros proyectos]
+
+---
+
+*Proyecto desarrollado para la asignatura Sistemas Operativos 750001C — Semestre 1, 2026*
