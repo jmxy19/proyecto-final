@@ -120,10 +120,17 @@ minikube service nginx --url
 
 ## Conclusiones
 
-1. [Aprendizaje principal]
-2. [Dificultad encontrada y cómo se resolvió]
-3. [Recomendación para futuros proyectos]
+1. [Aprendizaje principal]: durante el desarrollo de este proyecto aprendimos a poner en práctica varias tecnologías, entre ellas, la virtualización y la forma en que se pueden interconectar las máquinas virtuales de Linux (Kubuntu y Ubuntu server) configurando las redes y el acceso remoto mediante SSH, de igual manera con Docker entendimos como empaquetar servicios en contenedores facilitando el despliegue y la administración en backend y frontend, por otro lado, mediante kubernets y minikube conocimos conceptos básicos de orquestación de contenedores incluyendo el uso de pods, deployments, services y escalado de replicas,  todo esto en conjunto nos ayudó a tener una idea de como se implementan y administran servicios en entornos Cloud.
+   
+2. [Dificultad encontrada y cómo se resolvió]: en cada parte del proyecto se encontraron varias dificultades:
 
+      •	Virtualización con Linux: al momento de hacer la conexión entre el entorno grafico y el servidor se presentaron     muchos problemas ya que en el VirtualBox no se estaban configurando las maquinas virtuales de forma correcta,       lo   cual hacía que no apareciera la ip para hacer la conexión entre las máquinas, para solucionar el problema      se         activo el adaptador puente y promiscuos mode en permitir todo para que se pudieran ver entre sí,         otro problema fue   que al intentar hacer la conexión se ejecutaron muchos comando de actualización y               reinstalación de SSH lo cual      hizo que se corrompieran algunos archivos y cuando se ejecutaba “sudo             systemctl status ssh” salía un error por falta de archivos, para solucionar fue necesario eliminar y                reconfigurar las VMs desde cero.
+    
+    •	Contenedores Docker: para los contenedores fue un poco mas fácil ya que solo se usaba el entorno grafico y los principales errores eran por una mala configuración en los archivos “Dockerfile.backend”, ”Dockerfile.frontend” y “docker-compose.yml” que no permitían crear e iniciar los contenedores, para solucionar estos errores simplemente fue poner la versión correcta en FROM que era: “FROM ubuntu:24.04”, y escribir bien el nombre del archivo “docker-compose.yml” que se había guardado con otro nombre.
+    
+    •	Orquestación con Kubernets: en esta parte los errores que salían era porque se estaba intentando iniciar el minikube  sin haberlo descargado, para solucionar se ejecutaron comandos como: “curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64” y “sudo install minikube-linux-amd64 /usr/local/bin/minikube”, después de esto salia un error porque era necesario agregar el usuario al grupo Docker con “sudo usermod -aG docker $USER” y durante la instalación ocurrió otro problema por falta de almacenamiento en el /root asi que fue necesario reinstalar la MV dándole mas espacio.
+     
+3. [Recomendación para futuros proyectos]: se recomienda ser muy cuidadoso al momento de hacer las configuraciones desde el virtual box para que al momento de ejecutar la maquina virtual no salga ningún error, otra cosa es asegurarse de dar un buen espacio de almacenamiento para poder descargar todos los archivos sin necesidad de borrar otras cosas y en la parte de dockers y orquestación asegurarse de que los archivos forntend y backend tienen la sintaxis correcta para evitar errores.
 ---
 
-*Proyecto desarrollado para la asignatura Sistemas Operativos 750001C — Semestre 1, 2026*
+*Proyecto desarrollado para la asignatura Sistemas Operativos 750001C — Semestre 3, 2026*
