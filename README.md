@@ -114,7 +114,6 @@ minikube service nginx --url
 
 ## Diagrama de Arquitectura
 
-> Insertar imagen del diagrama (draw.io / Miro / Lucidchart)
 <img width="1290" height="775" alt="Arquitectura" src="https://github.com/user-attachments/assets/9d363020-8ba5-4d19-8c24-ad793cce7f26" />
 
 ---
