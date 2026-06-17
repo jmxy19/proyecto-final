@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kubernetes</title><link rel="stylesheet" href="css/style.css"></head>
+<body>
+<header>
+<img src="imagenes/logounivalle.jpg" class="logo" alt="Logo Universidad">
+<h1>Kubernetes</h1>
+</header>
+<nav>
+<a href="index.html">Inicio</a>
+<a href="equipo.html">Equipo</a>
+<a href="vm.html">VM</a>
+<a href="docker.html">Docker</a>
+<a href="kubernetes.html">Kubernetes</a>
+<a href="conclusiones.html">Conclusiones</a>
+</nav>
+<section>
+    <h2>instalar kubectl para darle ordenes a los kubenets con “sudo apt install curl -y”,  “curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl”", 
+“chmod +x kubectl” y “sudo mv kubectl /usr/local/bin/” , luego de verifica la version con “kubectl version --client”</h2>
+    <div class='galeria'>
+        <div class='evidencia'> 
+            <img src="imagenes/KB1.jpg" alt="evidencia 1">
+        </div>
+        <div class='evidencia'> 
+            <img src="imagenes/KB2.jpg" alt="evidencia 2">
+        </div>
+</section>
+<section>
+        <h2>Instalar Minikube “curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64”, “sudo install minikube-linux-amd64 /usr/local/bin/minikube” y verificar versión “minikube version”</h2>
+        <div class='galeria'>
+        <div class='evidencia'> 
+            <img src="imagenes/KB3.jpg" alt="evidencia 3">
+        </div>
+        <div></div>
+    </div>
+</section>
+<section>
+        <h2>iniciar Kubernets “minikube start” y verificar que funciona “kubectl get nodes”</h2>
+        <div class='galeria'>
+        <div class='evidencia'> 
+            <img src="imagenes/KB4.jpg" alt="evidencia 4">
+        </div>
+        <div></div>
+        </div>
+</section>
+<section>
+        <h2>aplicar los yalm  ”kubectl apply -f deployment.yaml” y “kubectl apply -f service.yaml”</h2>
+        <div class='galeria'>
+        <div class='evidencia'> 
+            <img src="imagenes/KB5.jpg" alt="evidencia 5">
+        </div>
+        <div></div>
+        </div>
+</section>
+<section>
+    <h2>Verificar pods con “kubectl get pods” y verificar servicio con “kubectl get svc”</h2>
+    <div class='galeria'>
+        <div class='evidencia'> 
+            <img src="imagenes/KB6.jpg" alt="evidencia 6">
+        </div>
+        <div></div>
+    </div>
+</section>
+<section>
+    <h2>verificar URL “minikube service nginx --url”, antes de verificar la URL se tuvo que inicar de nuevo el docker</h2>
+    <div class='galeria'>
+        <div class='evidencia'> 
+            <img src="imagenes/KB7.jpg" alt="evidencia 7">
+        </div>
+        <div></div>
+    </div>
+</section>
+<section>
+        <h2>Acceso desde navegador con http://192.168.49.2:30080 que fue la URL que devolvió “minikube service nginx --url”</h2>
+        <div class='galeria'>
+        <div class='evidencia'> 
+            <img src="imagenes/KB8.jpg" alt="evidencia 8">
+        </div>
+        <div></div>
+        </div>
+</section>
+<section>
+        <h2>escalar a 3 réplicas con “kubectl scale deployment nginx --replicas=3” y verificar el escalado con “kubectl get pods”</h2>
+        <div class='galeria'>
+        <div class='evidencia'> 
+            <img src="imagenes/KB9.jpg" alt="evidencia 9">
+        </div>
+        <div></div>
+        </div>
+</section>
+<footer>Proyecto Final Académico Sistemas Operativos 2026 - 1</footer>
+</body></html>
