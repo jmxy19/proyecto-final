@@ -102,7 +102,7 @@ minikube service nginx --url
 ## Componente 4: Sitio Web de Documentación
 
 **URL del sitio:** [https://juancastillo0601.github.io/PAGINA-WEB-PROYECTO-S.O/]  
-**Video YouTube:** [https://youtu.be/...]
+**Video YouTube:** [https://youtu.be/Cdh_4BbKrPE]
 
 ### Secciones del sitio
 - Home: introducción y objetivos
